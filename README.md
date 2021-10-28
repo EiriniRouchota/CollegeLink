@@ -1,2 +1,1 @@
-# CollegeLink
 Web Academy
