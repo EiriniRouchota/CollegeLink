@@ -20,7 +20,20 @@ Register page :point_down:
 
 ![register](https://github.com/EiriniRouchota/CollegeLink/blob/main/Screenshots/register-page.png)
 
+Login page :point_down:
+![login](https://github.com/EiriniRouchota/CollegeLink/blob/main/Screenshots/login-page.png)
 
+Index page 👇
+![index](https://github.com/EiriniRouchota/CollegeLink/blob/main/Screenshots/index-page.png)
 
+List page 👇
+![index](https://github.com/EiriniRouchota/CollegeLink/blob/main/Screenshots/index-page.png)
+
+Room pages 👇
+![room-basic](https://github.com/EiriniRouchota/CollegeLink/blob/main/Screenshots/room-page-basic.png)
+![room-details](https://github.com/EiriniRouchota/CollegeLink/blob/main/Screenshots/room-page-details.png)
+
+Profile page 
+![profile](https://github.com/EiriniRouchota/CollegeLink/blob/main/Screenshots/profile-page.png)
 
 *This is a project for Web Development eLearning Academy by :copyright: CollegeLink.* 
