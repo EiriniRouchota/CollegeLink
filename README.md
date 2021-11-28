@@ -1,4 +1,4 @@
-# **Travel Agency Website**
+# **Travel Agency Website** :boat: :airplane: :snowflake: :sunny:
 
 **Travel Agency Website** is a solution for travellers to search available hotels, make reservations and have a personalized profile with reviews and favorite hotels. 
 
