@@ -18,4 +18,4 @@
 ## **Screenshots**
 
 
-*This is a project for Web Development eLearning Academy by :copyright: CollegLink. 
+*This is a project for Web Development eLearning Academy by :copyright: CollegLink.* 
