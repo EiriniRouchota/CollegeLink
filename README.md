@@ -2,7 +2,7 @@
 
 This is a project for Web Development eLearning Academy by CollegLink. **Travel Agency Website** is a solution for travellers to search available hotels, make reservations and have a personalized profile with reviews and favorite hotels. 
 
-##**Functionalities**
+## **Functionalities**
 -Register 
 -Login
 -Search hotels regarding to check_in & check-out days, type of room, price per night and location
