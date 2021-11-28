@@ -17,7 +17,8 @@
 
 ## **Screenshots**
 Register page :point_down:
-https://github.com/EiriniRouchota/CollegeLink/blob/main/Screenshots/register-page.png
+
+![register](https://github.com/EiriniRouchota/CollegeLink/blob/main/Screenshots/register-page.png)
 
 
 
