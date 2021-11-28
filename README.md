@@ -16,6 +16,10 @@
 -Profile with favorite hotels, reviews and bookings
 
 ## **Screenshots**
+Register page :point_down:
+https://github.com/EiriniRouchota/CollegeLink/blob/main/Screenshots/register-page.png
 
 
-*This is a project for Web Development eLearning Academy by :copyright: CollegLink.* 
+
+
+*This is a project for Web Development eLearning Academy by :copyright: CollegeLink.* 
