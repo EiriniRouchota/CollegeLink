@@ -1,7 +1,7 @@
 <?php
 
+use Hotel\Favorite;
 use Hotel\User;
-use Hotel\Booking;
 
 require_once __DIR__ .'/../../boot/boot.php';
 
@@ -25,11 +25,21 @@ if (empty($roomId)) {
     return;
 }
 
-//Create booking
-$booking = new Booking();
-$checkInDate = $_REQUEST['check_in_date'];
-$checkOutDate = $_REQUEST['check_out_date'];
-$booking->insert($roomId, User::getCurrentUserId(), $checkInDate, $checkOutDate);
+//Set room to favorites
+$favorite = new Favorite();
+//Add or remove room from favorites 
+$isFavorite = $_REQUEST['is_favorite'];
+print_r($roomId);
+print_r(User::getCurrentUserId());
+if (!$isFavorite){
+    // var_dump("add to favorite");
+    $favorite->addFavorite($roomId, User::getCurrentUserId());
 
-//Return to room page
-header(sprintf('Location: ../assets/room.php?room_id=%s', $roomId));
+} else {
+    $favorite->removeFavorite($roomId,User::getCurrentUserId());
+}
+
+
+
+//Return to home page
+header(sprintf('Location: ../actions/room.php?room_id=%s', $roomId));

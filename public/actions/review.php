@@ -1,7 +1,9 @@
 <?php
 
+
 use Hotel\User;
-use Hotel\Booking;
+use Hotel\Favorite;
+use Hotel\Review;
 
 require_once __DIR__ .'/../../boot/boot.php';
 
@@ -25,11 +27,20 @@ if (empty($roomId)) {
     return;
 }
 
-//Create booking
-$booking = new Booking();
-$checkInDate = $_REQUEST['check_in_date'];
-$checkOutDate = $_REQUEST['check_out_date'];
-$booking->insert($roomId, User::getCurrentUserId(), $checkInDate, $checkOutDate);
+
+//Verify csrf
+$csrf = $_REQUEST['csrf'];
+if ($csrf || !User::verifyCsrf($csrf)){
+    header('Location: /');
+
+    return;
+}
+
+//Add review 
+$review=new Review();
+print_r($_REQUEST['comment']);
+print_r($$_REQUEST['rating']);
+$review->insert($roomId, User::getCurrentUserId(), $_REQUEST['rate'], $_REQUEST['comment']);
 
 //Return to room page
 header(sprintf('Location: ../assets/room.php?room_id=%s', $roomId));
