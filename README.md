@@ -27,13 +27,13 @@ Index page 👇
 ![index](https://github.com/EiriniRouchota/CollegeLink/blob/main/Screenshots/index-page.png)
 
 List page 👇
-![index](https://github.com/EiriniRouchota/CollegeLink/blob/main/Screenshots/index-page.png)
+![index](https://github.com/EiriniRouchota/CollegeLink/blob/main/Screenshots/list-page.png)
 
 Room pages 👇
 ![room-basic](https://github.com/EiriniRouchota/CollegeLink/blob/main/Screenshots/room-page-basic.png)
 ![room-details](https://github.com/EiriniRouchota/CollegeLink/blob/main/Screenshots/room-page-details.png)
 
-Profile page 
+Profile page 👇
 ![profile](https://github.com/EiriniRouchota/CollegeLink/blob/main/Screenshots/profile-page.png)
 
 *This is a project for Web Development eLearning Academy by :copyright: CollegeLink.* 
