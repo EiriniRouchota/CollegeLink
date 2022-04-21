@@ -13,6 +13,7 @@ $room = new Room();
 $favorite = new Favorite();
 //Check for room_id
 $roomId = $_REQUEST['room_id'];
+
 if (empty($roomId)){
     header('Location: index.php');
     return;
@@ -47,14 +48,12 @@ if (!$alreadyBooked){
     //    var_dump($alreadyBooked);die;
 }
 ?>
-<!DOCTYPE html>
-<html>
-<body>
+
 
 <!DOCTYPE html>
 <html>
 
-    <head>
+<head>
 
   <meta name="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -62,6 +61,12 @@ if (!$alreadyBooked){
   <title>Hello World</title>
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
   <link href="css/style.css" type="text/css" rel="stylesheet">
+  <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+      integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V"
+      crossorigin="anonymous"
+    />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
@@ -77,7 +82,9 @@ if (!$alreadyBooked){
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
-  
+  <style>
+      
+  </style>
   <script src="pages/room.js"></script>
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
@@ -124,7 +131,7 @@ if (!$alreadyBooked){
 
 <main>
 <header class="page-title">
-        <h1 class="inline"><?php echo sprintf('%s-%s, %s', $roomInfo['name'], $roomInfo[city], $roomInfo['area']) ?> | </h1>
+        <h1 class="inline"><?php echo sprintf('%s-%s, %s', $roomInfo['name'], $roomInfo['city'], $roomInfo['area']) ?> | </h1>
         <h1 class="inline">Reviews:</h1>
         <?php
             $roomAvgReview =$roomInfo['avg_reviews'];
@@ -161,27 +168,27 @@ if (!$alreadyBooked){
 
 </header>
         <div class="roomInfo">
-            <?php $roomInfo[photo_url]; ?>
-            <img class="roomInfo" src="images/<?php echo $roomInfo[photo_url]; ?>"  alt="Welcome to our site" width="80%" height="auto">
+            <?php $roomInfo['photo_url']; ?>
+            <img class="roomInfo" src="images/<?php echo $roomInfo['photo_url']; ?>"  alt="Welcome to our site" width="80%" height="auto">
         </div>
 
         <div class = "properties">
             <h3 class="fas fa-user inline center"> <?php echo $roomInfo['count_of_guests'] ?></h3>
            <h3 class=" inline icons"> Count of Guests </h3>
            <h3 class="fas fa-bed inline"> <?php 
-             if ($roomInfo[type_id]==1)
+             if ($roomInfo['type_id']==1)
              {
                 echo "Single";
              }
-             elseif ($roomInfo[type_id]==2)
+             elseif ($roomInfo['type_id']==2)
              {
                 echo "Double";
              }
-             elseif ($roomInfo[type_id]==3)
+             elseif ($roomInfo['type_id']==3)
              {
                 echo "Tripple";
              }
-             else if($roomInfo[type_id]==4)
+             else if($roomInfo['type_id']==4)
              {
                 echo "Fourfold";
              }
@@ -256,10 +263,11 @@ if (!$alreadyBooked){
        </div>
        </div> 
       
-    
-         <div id="mapid"></div>
-         <script>
-             var mymap = L.map('mapid').setView([<?php echo $roomInfo[location_lat] ?> , <?php echo $roomInfo[location_long] ?>], 15);
+  /
+  
+<div id="mapid"> 
+<script>
+             var mymap = L.map('mapid').setView([<?php echo $roomInfo['location_lat'] ?> , <?php echo $roomInfo['location_long'] ?>], 15);
               
              L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoicm91Y2hvdGEiLCJhIjoiY2t2NWo2bzV4MG03dDJyb2tqOW84N3VxZSJ9.tsuEQDiZAd_nZb9a3DPCgg', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -269,14 +277,16 @@ if (!$alreadyBooked){
     zoomOffset: -1,
     accessToken: 'pk.eyJ1Ijoicm91Y2hvdGEiLCJhIjoiY2t2NWo2bzV4MG03dDJyb2tqOW84N3VxZSJ9.tsuEQDiZAd_nZb9a3DPCgg'
 }).addTo(mymap);
-var marker = L.marker([<?php echo $roomInfo[location_lat] ?> , <?php echo $roomInfo[location_long] ?>]).addTo(mymap);
-marker.bindPopup("<b><?php echo $roomInfo[name]?></b>").openPopup();
+var marker = L.marker([<?php echo $roomInfo['location_lat'] ?> , <?php echo $roomInfo['location_long'] ?>]).addTo(mymap);
+marker.bindPopup("<b><?php echo $roomInfo['name']?></b>").openPopup();
 </script>
+</div>
+
 <div class="long">
-        <form name="reviewForm" class="reviewForm" method="post" action="../actions/review.php" class="long">
+        <form name="reviewForm" class="reviewForm" method="post" action="../actions/review.php" >
         
             <input type="hidden" name="room_id" value="<?php echo $roomId?>">
-            <input type="hidden" name="csrv" value="<?php echo User::getCsrf();?>"> 
+            <!-- <input type="hidden" name="csrv" value="</?php echo User::getCsrf();?>"> -->
             <p>Add Review</p>
             <fieldset class="rating">
                  <input type="radio" id="star5" name="rate" value="5" /><label for="star5" title="Rocks!">5 stars</label>
@@ -287,16 +297,18 @@ marker.bindPopup("<b><?php echo $roomInfo[name]?></b>").openPopup();
             </fieldset> 
             
             
-            <!-- <div class="form-group comments">
+          <!-- <div class="form-group comments">
            <textarea name="comment" id="comment" placeholder="Review"></textarea>
-            </div> -->
+            </div>  -->
             <input name="comment" id="comment" value="" placeholder="Leave a review" >
             
             <div class="action text-center">  
                 <button  class="submit-review1" type="submit">Submit</button>
             </div>
         </form>     
-     
+</div>
+
+
 </main>
 <br> </br>    
 <div class="clear"></div>
@@ -304,15 +316,9 @@ marker.bindPopup("<b><?php echo $roomInfo[name]?></b>").openPopup();
     <p> (c) Copyright CollegeLink 2021
 </footer>
 </div>
-    <link rel="stylesheet" href="css/fontawesome.min.css" />
-    <!-- <link href="css/style.css" type="text/css" rel="stylesheet" /> -->
+<link rel="stylesheet" href="css/fontawesome.min.css" />
+  <link href="css/style.css" type="text/css" rel="stylesheet" />
     <script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
-
-  <!-- <script
-      src="https://maps.googleapis.com/maps/api/js?keyAIzaSyB3sCdjim3q7BTdr5fccIYEYLG6DsINczY&callback=initMap&libraries=&v=weekly&channel=2"
-      async
-    ></script> -->
-   
 
 </body>
 </html>

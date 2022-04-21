@@ -9,7 +9,7 @@
 
         //Ajax request
         $.ajax(
-            'http://localhost/public/ajax/room_favorite.php',
+            'http://localhost/Collegelink/public/ajax/room_favorite.php',
             {
                 type: "POST",
                 dataType: "json",
@@ -45,7 +45,7 @@
 
         //Ajax request
         $.ajax(
-            'http://localhost/public/ajax/room_review.php',
+            'http://localhost/Collegelink/public/ajax/room_review.php',
             {
                 type: "POST",
                 dataType: "html",
@@ -70,7 +70,7 @@
 
         //Ajax request
         $.ajax(
-            'http://localhost/public/ajax/room_booking.php',
+            'http://localhost/Collegelink/public/ajax/room_booking.php',
             {
                 type: "POST",
                 dataType: "html",

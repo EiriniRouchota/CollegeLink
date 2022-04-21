@@ -9,7 +9,7 @@
 
         //Ajax request
         $.ajax(
-            'http://localhost/public/ajax/search_results.php',
+            'http://localhost/Collegelink/public/ajax/search_results.php',
             {
                 type: "GET",
                 dataType: "html",
@@ -22,7 +22,7 @@
                 $('#search-results-container').append(result);
 
                 //Push url state
-                history.pushState({}, '', 'http://localhost/public/assets/list.php?' + formData);
+                history.pushState({}, '', 'http://localhost/Collegelink/public/assets/list.php?' + formData);
             });
 
 

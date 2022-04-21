@@ -39,42 +39,42 @@ foreach($allAvailabeRooms as $allAvailabeRoom)
 
 <aside class="media">
 
-<?php $allAvailabeRoom[photo_url]; ?>
-<img class="img" src="images/<?php echo $allAvailabeRoom[photo_url]; ?>"  alt="Welcome to our site" width="100%" height="auto">
+<?php $allAvailabeRoom['photo_url']; ?>
+<img class="img" src="images/<?php echo $allAvailabeRoom['photo_url']; ?>"  alt="Welcome to our site" width="100%" height="auto">
 </aside>
 
 <main class="info">
-<h1><?php echo $allAvailabeRoom[name];?> </h1>
-<h2><?php echo $allAvailabeRoom[city]?></h2>
-<?php echo $allAvailabeRoom[description_short]?>
+<h1><?php echo $allAvailabeRoom['name'];?> </h1>
+<h2><?php echo $allAvailabeRoom['city']?></h2>
+<?php echo $allAvailabeRoom['description_short']?>
 
 
 
 <div class="text-right">
-<a href='room.php?room_id=<?php echo ($allAvailabeRoom[room_id])?>&check_in_date=<?php echo ($checkInDate)?>&check_out_date=<?php echo ($checkOutDate)?>'  class="room-button">Go to Room</a>
+<a href='room.php?room_id=<?php echo ($allAvailabeRoom['room_id'])?>&check_in_date=<?php echo ($checkInDate)?>&check_out_date=<?php echo ($checkOutDate)?>'  class="room-button">Go to Room</a>
 </div>
 
 <div class="clear"></div> 
 </article>
 
 <aside class="inline"> 
-<h5 class="dotted">PER NIGHT:<?php echo $allAvailabeRoom[price]?></h5>
-<h5 class="dotted">Count of Guests:<?php echo $allAvailabeRoom[count_of_guests]?></h5>
+<h5 class="dotted">PER NIGHT:<?php echo $allAvailabeRoom['price']?></h5>
+<h5 class="dotted">Count of Guests:<?php echo $allAvailabeRoom['count_of_guests']?></h5>
 <h5 class= "dotted">Type of Room:
 <?php 
- if ($allAvailabeRoom[type_id]==1)
+ if ($allAvailabeRoom['type_id']==1)
  {
     echo "Single";
  }
- elseif ($allAvailabeRoom[type_id]==2)
+ elseif ($allAvailabeRoom['type_id']==2)
  {
     echo "Double";
  }
- elseif ($allAvailabeRoom[type_id]==3)
+ elseif ($allAvailabeRoom['type_id']==3)
  {
     echo "Tripple";
  }
- else if($allAvailabeRoom[type_id]==4)
+ else if($allAvailabeRoom['type_id']==4)
  {
     echo "Fourfold";
  }

@@ -199,30 +199,30 @@ $userBookings = $booking->getListByUser($userId);
        
      <aside class="media">
      
-     <?php $booking[photo_url]; ?>
-       <img class="img" src="images/<?php echo $booking[photo_url]; ?>"  alt="Welcome to our site" width="100%" height="auto">
+     <?php $booking['photo_url']; ?>
+       <img class="img" src="images/<?php echo $booking['photo_url']; ?>"  alt="Welcome to our site" width="100%" height="auto">
      </aside>
      
      <main class="info">
-       <h1><?php echo $booking[name];?> </h1>
-       <h2><?php echo $booking[city]?></h2>
-       <?php echo $booking[description_short]?>
+       <h1><?php echo $booking['name'];?> </h1>
+       <h2><?php echo $booking['city']?></h2>
+       <?php echo $booking['description_short']?>
    
 
 
        <div class="text-right">
-       <a href='room.php?room_id=<?php echo ($booking[room_id])?>'  class="room-button">Go to Room</a>
+       <a href='room.php?room_id=<?php echo ($booking['room_id'])?>'  class="room-button">Go to Room</a>
        </div>
        
        <div class="clear"></div> 
        </article>
    
      <aside class="inline"> 
-         <h5 class="dotted">Total Cost:<?php echo $booking[total_price]?></h5>
-         <h5 class="dotted">Check In Date: <?php echo $booking[check_in_date]?></h5>
-         <h5 class="dotted">Check Out Date: <?php echo $booking[check_out_date]?></h5>
+         <h5 class="dotted">Total Cost:<?php echo $booking['total_price']?></h5>
+         <h5 class="dotted">Check In Date: <?php echo $booking['check_in_date']?></h5>
+         <h5 class="dotted">Check Out Date: <?php echo $booking['check_out_date']?></h5>
 
-         <h5 class= "dotted">Type of Room: <?php echo $booking[room_type]?></h5>
+         <h5 class= "dotted">Type of Room: <?php echo $booking['room_type']?></h5>
       
           
        </aside>

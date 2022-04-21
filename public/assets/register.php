@@ -25,9 +25,9 @@ if (!empty(User::getCurrentUserId()))
 <script>
 function validateForm(e) {
   e.preventDefault();
-  let x = document.forms["form"]["email"].value;
+  let x = document.forms['form']['email'].value;
  
-  let y = document.forms["form"]["email_repeat"].value;
+  let y = document.forms['form']['email_repeat'].value;
 
   // alert("hello validate");
   if (x != y) {
@@ -36,14 +36,14 @@ function validateForm(e) {
   }
   //Ajax request
   $.ajax({
-           url: 'http://localhost/public/actions/register.php',
+           url: 'http://localhost/Collegelink/public/actions/register.php',
             
                 type: "POST",
                 dataType: "html",
                 data: {
-                  username: document.getElementById("name").value,
-                  password: document.getElementById("password").value,
-                  email: document.getElementById("email").value,
+                  username: document.getElementById('name').value,
+                  password: document.getElementById('password').value,
+                  email: document.getElementById('email').value,
                  
                 },
             }).done(function (result) {
@@ -53,7 +53,7 @@ function validateForm(e) {
                 // // console.log(result);
                 // $('#room-reviews-container').append(result);
                 alert("User created");
-                window.location.href = "index.php";}
+                window.location.href = 'index.php';}
               else{
                 alert("Duplicate user");
               }
